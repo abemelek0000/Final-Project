@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Geom:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Geom:ital,wght@0,300..900;1,300..900&family=Menbere:wght@100..700&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        font-family: "Agbalumo",sans-serif;
+    font-style: normal;    
+}
+:root{
+    --bg-color: #ECECEB;
+    --gre-color:#45535A;
+    --brown-color: #834000;
+    --gray-color: #748485;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Agbalumo",sans-serif;
+    font-weight: 800;
+    color: var(--brown-color);
+    margin-bottom: 0em;
+}
+p,a,span,li,button,pre{
+    font-family: "Menbere",sans-serif;
+    font-weight: 400;
+    color:  #21191A;
+    margin-bottom: 0.5em;
+}
+button{
+    padding: 10px 1.5em;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: var(--brown-color);
+    color: white;
+    font-weight: 600;
+    width: fit-content;
+    margin: 1em 0;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+button:hover{
+    background: transparent;
+    border: 1px solid var(--brown-color);
+    color: var(--brown-color);
+}
+a{
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    color:var(--bg-color);
+}
+a:hover{
+    text-decoration: underline;
+    color:var(--bg-color);
+    font-weight: lighter;
+    
+}
+.content{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+body{
+    width: 100%;
+    background-color: var(--bg-color);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1em 2em;
+    padding-bottom: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(0.5s);
+    z-index: 1000;  
+    background-color: var(--brown-color);
+}
+header nav{
+    display: flex;
+    gap: 1em;
+}
+header h1{
+    font-size: 2.5em;
+    color:var(--bg-color);
+    
+}
+.intro{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+.intro-content{
+    position: absolute;
+    padding: 2em 1em;
+    margin-top: 6.5em;
+    width: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    gap: 1em;
+}
+.intro-content .left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2em 3.5em;
+    padding-bottom: 5em;
+    align-items: center;
+    border-right: 2px solid var(--brown-color);
+}
+.intro-content .left p{
+    font-size: 1.5em;
+   margin-top: 1em;
+}
+.intro-content .left h2{
+    font-size: 4.0em;
+    margin-bottom: 0.5em;       
+}
+.intro-content .right{
+    width: 60%;
+    align-content: center;
+    background-color: var(--brown-color);
+    box-shadow:0px 0px 10px rgba(0, 0, 0,2);
+}
+.intro-rightText{
+    align-items: center;
+    background-color: var(--brown-color);
+  margin-left: 3em;
+  margin-right: 3em;
+  
+  padding-right: em;
+  box-shadow:0px 0px 10px rgba(0, 0, 0,1);
+  
+}
+.intro-rightText p{
+    color: black;
+    font-size: 1.2em;
+    margin-left: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: var(--brown-color);
+}
+
+.book-recommendation{
+    background-color:var(--bg-color);
+}
+.recommend-header{
+    margin-bottom: 1em;
+    margin-left: 5em;
+    padding-top: 1em;
+    font-size: 1.2em;
+}
+.book-recommendation .content{
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    width: 100%;
+box-shadow:0px 0px 10px rgba(0, 0, 0,0.5);
+}
+.recommend-left{
+    width: 60%;
+}
+.recommend-left img{
+    height: 100vh;
+    object-fit: cover;
+    padding: 0.5em;
+    box-shadow:0px 0px 10px rgba(0, 0, 0,0.5);
+}
+.recommend-right{
+    width: 40%;
+    padding-top: 5em;
+}
+.recommend-right h3{
+    font-size: 2em;
+    font-weight: lighter;   
+    margin-left: -5em;
+    color: var(--gray-color); 
+}
+.recommend-text{
+    padding-top: 2em;
+    margin-left: -10em;
+    align-self: center;
+}
+ .author-info{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+.winner-header {
+ margin-bottom: 1em;
+    margin-left: 5em;
+    padding-top: 1em;
+    font-size: 1.2em;
+}
+.poem-of-theWeek .content{
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    width: 100%;
+box-shadow:0px 0px 10px rgba(0, 0, 0,0.5);
+}
+.winner-right{
+    width: 60%;
+    padding: 2em;
+    margin-left: 15em;
+    
+}
+.winner-left{
+    width: 40%;
+}
+.winner-right img{
+    height: 40vh;
+    border-radius:2000px;
+    box-shadow:0px 0px 10px rgba(0, 0, 0,0.5);
+    margin-bottom: 1em;
+}
+.winner-right p{
+    padding-left: 1em;
+    font-size: larger;
+    font-weight: bolder;
+}
+.winner-text{
+    padding-top: 2em;
+    padding-left: 6em;
+    padding-right: 6em;
+    margin-top: 2em;
+    border-right: 2px solid var(--brown-color);
+}
+.poem-of-theWeek{
+    padding-bottom: 2em;
+}
+footer{
+    background-color: var(--brown-color);
+    padding: 1em 2.5em;
+    padding-bottom: 2em;
+}
+.footer-links{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: flex-start;
+}
+.footer-links nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0;
+    font-size: 15px;
+ }
+ .footer-bottom{
+    text-align: center;
+    margin-top: 1em;
+}
+@keyframes appear{
+    from {
+        opacity: 0.5;
+        scale: 0.5;
+        
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        
+    }
+}
+section {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+.mesob{
+    margin-top: 7em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.Mesob-header {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+.mesob-content {
+    padding: 0 20px 80px;
+}
+.mesob-filter {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.filter-btn .active{
+    background: transparent;
+    border: 1px solid var(--brown-color);
+    color: var(--brown-color);
+}
+.mesob-poem {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+
+   
