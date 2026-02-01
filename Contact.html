@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>ጓዳ</title>
+</head>
+<body>
+    <header>
+            <h1>ግጥም ሲጥም</h1>
+            <nav class="pages">
+                <a href="home.html">ቤት-ለእንግዳ</a>
+                <a href="poems.html">መሶብ</a>
+                <a href="Contact.html">ጓዳ</a>
+                <a href="about.html">ስለ-እኛ</a>
+            </nav>
+        </header>    
+    <section class="Contact">
+            <div class="contact-header">
+                <h2>ግጥሞን ያጋሩን</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>መመሪያዎች</h3>
+                    <ul>
+                        <li>የሰው ግጥም እንደራስ አድርጎ ማጋራት አይቻልም።</li>
+                        <li>ተገቢ የሆነና የማህበረሰብ እሴቶችን የጠበቀ ግጥም መሆን አለበት።</li>
+                        <li>ያጋሩንን ስራዎች በዚህ ገፅ ላይ እንደምናጋራው ይወቁ።</li>
+                    </ul>
+                </div>
+                
+                <form class="contact-form" id="poem-submission-form">
+                    <h3>ግጥሞን እዚህ ጋር ያጋሩ</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">ሙሉ ስም(የብዕር ስም መጠቀም ይችላሉ) *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">የኢሜይል አድራሻ *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="title">የግጥም ርዕስ</label>
+                        <input type="text" id="title" name="title" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poem">ግጥም*</label>
+                        <textarea id="poem" name="poem" rows="20" required placeholder="ግጥምዎን እዚህ ይጻፉ..."></textarea>
+                    </div>
+                   
+                    <button type="submit" class="btn submit-btn">አስገባ</button>
+                    <p class="form-note">ይህ * ምልክት ያለባቸው መጠይቆች ባዶ መተው አይችሉም።</p>
+                </form>
+            </div>
+    <footer id="footer">
+        <div class="content">
+            <div class="footer-links">
+                <div class="links">
+                    <div class="footer-title">ክፍሎች</div>
+                    <nav>
+                        <a href="home.html">ቤት-ለእንግዳ</a>
+                        <a href="poems.html">መሶብ</a>
+                        <a href="Contact.html">ጓዳ</a>
+                        <a href="about.html">ስለ-እኛ</a>
+                    </nav>
+                </div>
+                <div class="links">
+                    <div class="footer-title">ማህበራዊ ሚድያ</div>
+                    <nav>
+                       <a href="#">ፌስቡክ</a>
+                       <a href="#">ኢንስታግራም</a>
+                       <a href="#">ቲክቶክ</a>
+                       <a href="#">ቴሌግራም</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2018 ግጥም ሲጥም. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
