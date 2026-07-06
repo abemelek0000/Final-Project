@@ -721,20 +721,7 @@ section {
         padding: 15px;
     }
 }
-@media (max-height: 600px) and (orientation: landscape) {
-    .intro-content {
-        margin-top: 6em;
-        min-height: auto;
-    }
-    
-    .intro-content .left {
-        padding: 1em;
-    }
-    
-    .recommend-left img {
-        max-height: 250px;
-    }
-}
+
 
 
    
