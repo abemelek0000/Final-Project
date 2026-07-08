@@ -169,11 +169,44 @@ async function featuredPoem(req,res){
 
 }
 
+async function adminDeletePoem(req, res) {
+
+    try {
+
+        const poem = await poemModel.getPoemById(req.params.id);
+
+        if (!poem) {
+
+            return res.status(404).json({
+                message: "Poem not found."
+            });
+
+        }
+
+        await poemModel.deletePoem(req.params.id);
+
+        res.json({
+            message: "Poem deleted successfully by admin."
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Internal Server Error"
+        });
+
+    }
+
+}
+
 module.exports = {
   createPoem,
   getAllPoems,
   getPoem,
   updatePoem,
   deletePoem,
-  featuredPoem
+  featuredPoem,
+  adminDeletePoem
 };

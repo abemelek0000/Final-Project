@@ -7,6 +7,8 @@ const likeRoutes = require("./routes/likeRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const followRoutes=require("./routes/followRoutes");
 const userRoutes=require("./routes/userRoutes");
+const bookRoutes = require("./routes/bookRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
@@ -24,5 +26,7 @@ app.use("/api/likes", likeRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/follows",followRoutes);
 app.use("/api/users",userRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/admin", adminRoutes);
 
 module.exports = app;

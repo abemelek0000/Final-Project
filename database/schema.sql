@@ -119,3 +119,24 @@ CREATE TABLE followers (
 ALTER TABLE users
 ALTER COLUMN profile_image
 SET DEFAULT 'default-avatar.png';
+CREATE TABLE book_recommendations (
+
+    id SERIAL PRIMARY KEY,
+
+    title VARCHAR(200) NOT NULL,
+
+    author VARCHAR(150) NOT NULL,
+
+    description TEXT NOT NULL,
+
+    cover_image VARCHAR(255),
+
+    created_by INTEGER NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_book_admin
+        FOREIGN KEY (created_by)
+        REFERENCES users(id)
+        ON DELETE CASCADE
+);
