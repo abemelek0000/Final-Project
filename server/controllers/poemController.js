@@ -141,10 +141,39 @@ async function deletePoem(req, res) {
   }
 }
 
+async function featuredPoem(req,res){
+
+    try{
+
+        const poem=await poemModel.getFeaturedPoem();
+
+        if(!poem){
+
+            return res.status(404).json({
+                message:"No featured poem available."
+            });
+
+        }
+
+        res.json(poem);
+
+    }catch(error){
+
+        console.error(error);
+
+        res.status(500).json({
+            message:"Internal Server Error"
+        });
+
+    }
+
+}
+
 module.exports = {
   createPoem,
   getAllPoems,
   getPoem,
   updatePoem,
-  deletePoem
+  deletePoem,
+  featuredPoem
 };

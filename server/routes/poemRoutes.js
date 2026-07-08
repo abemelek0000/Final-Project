@@ -9,6 +9,8 @@ router.post("/", authenticate, poemController.createPoem);
 
 router.get("/", poemController.getAllPoems);
 
+router.get("/featured", poemController.featuredPoem);
+
 router.get("/:id", poemController.getPoem);
 
 router.put("/:id", authenticate, poemController.updatePoem);

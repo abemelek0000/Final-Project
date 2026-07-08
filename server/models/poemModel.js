@@ -94,11 +94,54 @@ async function incrementViews(id) {
 
   await pool.query(query, [id]);
 }
+
+async function getFeaturedPoem(){
+
+    const query=`
+
+    SELECT
+
+        poems.id,
+        poems.title,
+        poems.content,
+        poems.views,
+        poems.created_at,
+        users.username,
+        COUNT(likes.id)::int AS likes
+
+    FROM poems
+
+    JOIN users
+        ON poems.author_id=users.id
+
+    LEFT JOIN likes
+        ON poems.id=likes.poem_id
+
+    WHERE poems.source_type='USER'
+
+    GROUP BY
+        poems.id,
+        users.username
+
+    ORDER BY likes DESC,
+             poems.created_at DESC
+
+    LIMIT 1;
+
+    `;
+
+    const result=await pool.query(query);
+
+    return result.rows[0];
+
+}
+
 module.exports = {
   createPoem,
   getAllPoems,
   getPoemById,
   updatePoem,
   deletePoem,
-  incrementViews
+  incrementViews,
+  getFeaturedPoem
 };

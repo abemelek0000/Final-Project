@@ -44,8 +44,30 @@ async function findUserById(id) {
   return result.rows[0];
 }
 
+async function searchUsers(username){
+
+    const result=await pool.query(
+
+        `SELECT
+            id,
+            username,
+            bio,
+            profile_image
+         FROM users
+         WHERE username ILIKE $1
+         ORDER BY username`,
+
+         [`%${username}%`]
+
+    );
+
+    return result.rows;
+
+}
+
 module.exports = {
   createUser,
   findUserByEmail,
-  findUserById
+  findUserById,
+  searchUsers
 };
