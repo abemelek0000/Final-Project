@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const poemRoutes = require("./routes/poemRoutes");
 const authRoutes = require("./routes/authRoutes");
 const likeRoutes = require("./routes/likeRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/poems", poemRoutes);
 app.use("/api/likes", likeRoutes);
+app.use("/api/comments", commentRoutes);
 
 module.exports = app;
