@@ -11,4 +11,8 @@ router.get("/", poemController.getAllPoems);
 
 router.get("/:id", poemController.getPoem);
 
+router.put("/:id", authenticate, poemController.updatePoem);
+
+router.delete("/:id", authenticate, poemController.deletePoem);
+
 module.exports = router;

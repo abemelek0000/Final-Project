@@ -51,6 +51,8 @@ async function getAllPoems(req, res) {
 async function getPoem(req, res) {
   try {
 
+    await poemModel.incrementViews(req.params.id);
+
     const poem = await poemModel.getPoemById(req.params.id);
 
     if (!poem) {
@@ -62,7 +64,75 @@ async function getPoem(req, res) {
     res.json(poem);
 
   } catch (error) {
+    console.error(error);
 
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
+async function updatePoem(req, res) {
+  try {
+
+    const poem = await poemModel.getPoemById(req.params.id);
+
+    if (!poem) {
+      return res.status(404).json({
+        message: "Poem not found."
+      });
+    }
+
+    if (poem.author_id !== req.user.id) {
+      return res.status(403).json({
+        message: "You can only edit your own poems."
+      });
+    }
+
+    const updated = await poemModel.updatePoem(
+      req.params.id,
+      req.body.title,
+      req.body.content
+    );
+
+    res.json({
+      message: "Poem updated successfully.",
+      poem: updated
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
+async function deletePoem(req, res) {
+  try {
+
+    const poem = await poemModel.getPoemById(req.params.id);
+
+    if (!poem) {
+      return res.status(404).json({
+        message: "Poem not found."
+      });
+    }
+
+    if (poem.author_id !== req.user.id) {
+      return res.status(403).json({
+        message: "You can only delete your own poems."
+      });
+    }
+
+    await poemModel.deletePoem(req.params.id);
+
+    res.json({
+      message: "Poem deleted successfully."
+    });
+
+  } catch (error) {
     console.error(error);
 
     res.status(500).json({
@@ -74,5 +144,7 @@ async function getPoem(req, res) {
 module.exports = {
   createPoem,
   getAllPoems,
-  getPoem
+  getPoem,
+  updatePoem,
+  deletePoem
 };

@@ -57,8 +57,48 @@ async function getPoemById(id) {
   return result.rows[0];
 }
 
+async function updatePoem(id, title, content) {
+  const query = `
+    UPDATE poems
+    SET
+      title = $1,
+      content = $2,
+      updated_at = CURRENT_TIMESTAMP
+    WHERE id = $3
+    RETURNING *;
+  `;
+
+  const result = await pool.query(query, [title, content, id]);
+
+  return result.rows[0];
+}
+
+async function deletePoem(id) {
+  const query = `
+    DELETE FROM poems
+    WHERE id = $1
+    RETURNING *;
+  `;
+
+  const result = await pool.query(query, [id]);
+
+  return result.rows[0];
+}
+
+async function incrementViews(id) {
+  const query = `
+    UPDATE poems
+    SET views = views + 1
+    WHERE id = $1;
+  `;
+
+  await pool.query(query, [id]);
+}
 module.exports = {
   createPoem,
   getAllPoems,
-  getPoemById
+  getPoemById,
+  updatePoem,
+  deletePoem,
+  incrementViews
 };
