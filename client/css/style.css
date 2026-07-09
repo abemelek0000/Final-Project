@@ -291,7 +291,7 @@ footer{
     margin-bottom: 40px;
     flex-wrap: wrap;
 }
-.filter-btn .active{
+.filter-btn.active{
     background: transparent;
     border: 1px solid var(--brown-color);
     color: var(--brown-color);
@@ -452,6 +452,292 @@ footer{
 .stat-card p {
     font-weight: 600;
 }
+
+
+
+
+.auth-container{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+    background:#f5f5f5;
+
+}
+
+.auth-card{
+
+    width:100%;
+
+    max-width:460px;
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.auth-card h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+    color:#222;
+
+}
+
+.auth-subtitle{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:35px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:22px;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.form-group input{
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.form-group input:focus{
+
+    border-color:#8B0000;
+
+    box-shadow:0 0 6px rgba(139,0,0,.25);
+
+}
+
+.auth-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#8B0000;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.auth-btn:hover{
+
+    background:#6d0000;
+
+}
+
+.auth-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.auth-link a{
+
+    text-decoration:none;
+
+    color:#8B0000;
+
+    font-weight:600;
+
+}
+
+.auth-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:600px){
+
+.auth-card{
+
+    padding:30px 25px;
+
+}
+
+}
+
+
+.poem-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin:20px 0;
+
+}
+
+.poem-card{
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.poem-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.poem-header h3{
+
+    color:#8B0000;
+
+}
+
+.poem-body{
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    margin-bottom:20px;
+
+}
+
+.poem-footer{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:35px;
+
+}
+
+.modal-content textarea{
+
+    width:100%;
+
+    resize:vertical;
+
+    padding:12px;
+
+}
+
+.modal-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+
 @keyframes appear{
     from {
         opacity: 0.5;
@@ -670,6 +956,364 @@ section {
         margin: 1em 0;
     }
 }
+
+.poem-card-footer{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #eee;
+}
+.icon-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 14px;
+    margin:0;
+    border-radius:20px;
+    border:1px solid #ddd;
+    background:white;
+    color:#555;
+    font-size:0.9em;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+.icon-btn:hover{
+    background:#f5f5f5;
+    border-color:var(--brown-color);
+    color:var(--brown-color);
+}
+.icon-btn.liked{
+    background:#fdeaea;
+    border-color:#c0392b;
+    color:#c0392b;
+}
+.icon-btn.following{
+    background:#eafbea;
+    border-color:#2e7d32;
+    color:#2e7d32;
+}
+.poem-meta{
+    margin-left:auto;
+    color:#888;
+    font-size:0.85em;
+}
+.comment-section{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #eee;
+}
+.comment-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:15px;
+    max-height:260px;
+    overflow-y:auto;
+}
+.comment-item{
+    background:#f7f7f7;
+    border-radius:10px;
+    padding:10px 14px;
+    font-size:0.9em;
+}
+.comment-item .comment-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:4px;
+}
+.comment-item .comment-author{
+    font-weight:700;
+    color:var(--brown-color);
+}
+.comment-item .comment-delete{
+    background:none;
+    border:none;
+    color:#c0392b;
+    cursor:pointer;
+    font-size:0.85em;
+    padding:0;
+    margin:0;
+    width:auto;
+}
+.comment-item .comment-delete:hover{
+    text-decoration:underline;
+}
+.comment-empty{
+    color:#999;
+    font-size:0.9em;
+    margin-bottom:10px;
+}
+.comment-form{
+    display:flex;
+    gap:10px;
+}
+.comment-form input{
+    flex:1;
+    padding:10px 14px;
+    border-radius:20px;
+    border:1px solid #ccc;
+    font-family:"Menbere",sans-serif;
+    font-size:0.9em;
+}
+.comment-form button{
+    margin:0;
+    padding:10px 20px;
+    border-radius:20px;
+}
+
+
+.profile-page{
+    max-width:1000px;
+    margin:0 auto;
+    padding:7em 20px 60px;
+}
+.profile-card{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    flex-wrap:wrap;
+}
+.profile-avatar{
+    width:90px;
+    height:90px;
+    min-width:90px;
+    border-radius:50%;
+    background:var(--brown-color);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2.2em;
+    font-family:"Agbalumo",sans-serif;
+}
+.profile-info h2{
+    margin-bottom:5px;
+}
+.profile-bio{
+    color:#555;
+    margin-bottom:10px;
+    max-width:500px;
+}
+.profile-stats{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.profile-stat{
+    font-size:0.9em;
+    color:#666;
+}
+.profile-stat strong{
+    color:var(--brown-color);
+    font-size:1.2em;
+    display:block;
+}
+.role-badge{
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:0.75em;
+    font-weight:700;
+    background:var(--brown-color);
+    color:white;
+    margin-top:8px;
+}
+.profile-section{
+    margin-bottom:45px;
+}
+.profile-section h3{
+    font-size:1.4em;
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--brown-color);
+}
+.search-form{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    max-width:500px;
+}
+.search-form input{
+    flex:1;
+    padding:12px 16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-family:"Menbere",sans-serif;
+}
+.search-form button{
+    margin:0;
+    white-space:nowrap;
+}
+.user-results{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.user-result{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:white;
+    border-radius:12px;
+    padding:15px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+.user-result .profile-avatar{
+    width:50px;
+    height:50px;
+    min-width:50px;
+    font-size:1.3em;
+}
+.user-result-info{
+    flex:1;
+}
+.user-result-info .username{
+    font-weight:700;
+    color:var(--brown-color);
+}
+.user-result-info .bio{
+    font-size:0.85em;
+    color:#777;
+}
+.empty-state{
+    color:#888;
+    text-align:center;
+    padding:30px;
+    background:white;
+    border-radius:12px;
+}
+
+.admin-page{
+    max-width:1100px;
+    margin:0 auto;
+    padding:7em 20px 60px;
+}
+.admin-tabs{
+    display:flex;
+    gap:1em;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+.admin-tab-btn{
+    padding:10px 1.5em;
+    border-radius:15px;
+    border:1px solid var(--brown-color);
+    background:transparent;
+    color:var(--brown-color);
+    font-weight:600;
+    cursor:pointer;
+    margin:0;
+}
+.admin-tab-btn.active{
+    background:var(--brown-color);
+    color:white;
+}
+.admin-panel{
+    display:none;
+}
+.admin-panel.active{
+    display:block;
+}
+.admin-panel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+.admin-table-wrapper{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    overflow-x:auto;
+}
+table.admin-table{
+    width:100%;
+    border-collapse:collapse;
+}
+.admin-table th,
+.admin-table td{
+    text-align:left;
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    font-size:0.9em;
+}
+.admin-table th{
+    background:#faf5ef;
+    color:var(--brown-color);
+    font-weight:700;
+}
+.admin-table tr:last-child td{
+    border-bottom:none;
+}
+.admin-table td.actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+.admin-table button{
+    margin:0;
+    padding:8px 14px;
+    font-size:0.85em;
+    border-radius:8px;
+}
+.btn-danger{
+    background:#c0392b !important;
+}
+.btn-danger:hover{
+    background:transparent !important;
+    border:1px solid #c0392b !important;
+    color:#c0392b !important;
+}
+.source-badge{
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:12px;
+    font-size:0.75em;
+    font-weight:700;
+    color:white;
+    background:var(--gray-color);
+}
+.source-badge.ADMIN{
+    background:var(--brown-color);
+}
+
+@media (max-width: 767px) {
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
+    }
+    .profile-stats{
+        justify-content:center;
+    }
+    .poem-card-footer{
+        flex-direction:column;
+        align-items:stretch;
+    }
+    .poem-meta{
+        margin-left:0;
+        text-align:center;
+    }
+    .comment-form{
+        flex-direction:column;
+    }
+    .admin-panel-header{
+        flex-direction:column;
+        align-items:stretch;
+    }
+}
+
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5em;
@@ -725,3 +1369,21 @@ section {
 
 
    
+
+
+.profile-avatar,
+.user-result-info .username,
+.poem-author-link {
+    text-decoration: none;
+}
+.poem-author-link {
+    color: var(--brown-color);
+    font-weight: 600;
+}
+#bioForm {
+    max-width: 500px;
+    margin-top: 10px;
+}
+#editBioBtn {
+    margin-top: 6px;
+}

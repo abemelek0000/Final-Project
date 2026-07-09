@@ -8,4 +8,6 @@ const followController=require("../controllers/followController");
 
 router.post("/:id",authenticate,followController.toggleFollow);
 
+router.get("/:id/count",followController.getFollowerCount);
+
 module.exports=router;

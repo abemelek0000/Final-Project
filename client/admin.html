@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Admin | ግጥም ሲጥም</title>
+</head>
+<body>
+    <header>
+        <h1>ግጥም ሲጥም</h1>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main class="admin-page">
+
+        <div class="admin-tabs">
+            <button class="admin-tab-btn active" data-tab="books">መጽሃፍት</button>
+            <button class="admin-tab-btn" data-tab="poems">ግጥሞች</button>
+        </div>
+
+        
+        <section class="admin-panel active" id="panel-books">
+            <div class="admin-panel-header">
+                <h3 style="border:none; margin:0; padding:0;">የመጽሃፍ ጥቆማ</h3>
+                <button id="newBookBtn" class="auth-btn">+ መጽሃፍ አስገባ</button>
+            </div>
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ሽፋን</th>
+                            <th>ርዕስ</th>
+                            <th>ደራሲ</th>
+                            <th>ያስገባው ሰው</th>
+                            <th>ቀን</th>
+                            <th>ድርጊት</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booksTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+       
+        <section class="admin-panel" id="panel-poems">
+            <div class="admin-panel-header">
+                <h3 style="border:none; margin:0; padding:0;">ሁሉም ግጥሞች</h3>
+            </div>
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ርዕስ</th>
+                            <th>ገጣሚ</th>
+                            <th>ምንጭ</th>
+                            <th>እይታ</th>
+                            <th>አድናቆት</th>
+                            <th>አስተያየት</th>
+                            <th>ቀን</th>
+                            <th>ድርጊት</th>
+                        </tr>
+                    </thead>
+                    <tbody id="poemsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="bookModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="bookModalTitle">መጽሃፍ ጨምር</h2>
+            <form id="bookForm">
+                <input type="hidden" id="bookId">
+                <div class="form-group">
+                    <label>ርዕስ</label>
+                    <input id="bookTitle" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>ደራሲ</label>
+                    <input id="bookAuthorInput" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>ማብራሪያ</label>
+                    <textarea id="bookDescriptionInput" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>ሽፋን</label>
+                    <input id="bookCoverInput" type="text" placeholder="">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancelBookModal">ሰርዝl</button>
+                    <button class="auth-btn" type="submit">አስቀምጥ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="content">
+            <div class="footer-links">
+                <div class="links">
+                    <div class="footer-title">ክፍሎች</div>
+                    <nav>
+                        <a href="home.html">ቤት-ለእንግዳ</a>
+                        <a href="poems.html">መሶብ</a>
+                        <
+                    </nav>
+                </div>
+                <div class="links">
+                    <div class="footer-title">ማህበራዊ ሚድያ</div>
+                    <nav>
+                       <a href="#">ፌስቡክ</a>
+                       <a href="#">ኢንስታግራም</a>
+                       <a href="#">ቲክቶክ</a>
+                       <a href="#">ቴሌግራም</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2018 ግጥም ሲጥም. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

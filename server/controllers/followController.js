@@ -49,4 +49,26 @@ async function toggleFollow(req,res){
 
 }
 
-module.exports={toggleFollow};
+async function getFollowerCount(req, res) {
+
+    try {
+
+        const count = await followModel.followerCount(req.params.id);
+
+        res.json(count);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+
+}
+
+module.exports = {
+    toggleFollow,
+    getFollowerCount
+};

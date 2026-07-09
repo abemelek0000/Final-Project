@@ -83,9 +83,26 @@ async function login(req, res) {
     );
 
     res.json({
-      message: "Login successful.",
-      token
-    });
+
+    message: "Login successful.",
+
+    token,
+
+    user: {
+
+        id: user.id,
+
+        username: user.username,
+
+        email: user.email,
+
+        role: user.role,
+
+        profile_image: user.profile_image
+
+    }
+
+});
 
   } catch (error) {
     console.error(error);
@@ -113,8 +130,40 @@ async function profile(req, res) {
   }
 }
 
+async function updateProfile(req, res) {
+  try {
+
+    const current = await userModel.findUserById(req.user.id);
+
+    const bio = req.body.bio !== undefined ? req.body.bio : current.bio;
+
+    const profileImage = req.body.profile_image !== undefined
+      ? req.body.profile_image
+      : current.profile_image;
+
+    const user = await userModel.updateProfile(
+      req.user.id,
+      bio,
+      profileImage
+    );
+
+    res.json({
+      message: "Profile updated successfully.",
+      user
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
 module.exports = {
   register,
   login,
-  profile
+  profile,
+  updateProfile
 };

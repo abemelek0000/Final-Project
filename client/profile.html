@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Profile | ግጥም ሲጥም</title>
+</head>
+<body>
+    <header>
+        <h1>ግጥም ሲጥም</h1>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main class="profile-page">
+
+        <section class="profile-card">
+            <div class="profile-avatar" id="profileAvatar">?</div>
+            <div class="profile-info">
+                <h2 id="profileUsername">—</h2>
+                <p class="profile-bio" id="profileBio"></p>
+
+                <button
+                    id="editBioBtn"
+                    class="icon-btn"
+                    type="button"
+                    style="display:none;">
+                    ስለእኔ ለመናገር
+                </button>
+
+                <form id="bioForm" class="hidden">
+                    <div class="form-group">
+                        <textarea id="bioInput" rows="3" placeholder="ስለራስህ ትንሽ ተናገር..."></textarea>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" id="cancelBioEdit">ሰርዝ</button>
+                        <button class="auth-btn" type="submit">አስቀምጥ</button>
+                    </div>
+                </form>
+
+                <div id="profileFollowWrap" style="display:none;"></div>
+
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <strong id="profilePoemCount">0</strong>
+                        ግጥሞች
+                    </div>
+                    <div class="profile-stat">
+                        <strong id="profileFollowerCount">0</strong>
+                        ተከታዮች
+                    </div>
+                </div>
+                <span class="role-badge" id="profileRole"></span>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <div class="poem-actions" style="justify-content: space-between; display:flex; align-items:center;">
+                <h3 id="poemsHeading" style="border:none; margin:0; padding:0;">የኔ ግጥሞች</h3>
+                <button id="newPoemBtn" class="auth-btn">+ ግጥም ይፃፉ</button>
+            </div>
+            <div class="mesob-poem" id="myPoemsList"></div>
+        </section>
+
+    </main>
+
+    <div id="poemModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">ግጥም ይፃፉ</h2>
+            <form id="poemForm">
+                <input type="hidden" id="poemId">
+                <div class="form-group">
+                    <label>ርዕስ</label>
+                    <input id="poemTitle" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>ግጥም</label>
+                    <textarea id="poemContent" rows="10" required></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancelModal">ሰርዝ</button>
+                    <button class="auth-btn" type="submit">አጋራ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="content">
+            <div class="footer-links">
+                <div class="links">
+                    <div class="footer-title">ክፍሎች</div>
+                    <nav>
+                        <a href="home.html">ቤት-ለእንግዳ</a>
+                        <a href="poems.html">መሶብ</a>
+                        
+                    </nav>
+                </div>
+                <div class="links">
+                    <div class="footer-title">ማህበራዊ ሚድያ</div>
+                    <nav>
+                       <a href="#">ፌስቡክ</a>
+                       <a href="#">ኢንስታግራም</a>
+                       <a href="#">ቲክቶክ</a>
+                       <a href="#">ቴሌግራም</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2018 ግጥም ሲጥም. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="js/poems.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

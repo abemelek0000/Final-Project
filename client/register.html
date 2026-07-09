@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Getem Sitim</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav id="navbar"></nav>
+
+</header>
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <h1>አካውንት ይክፈቱ</h1>
+
+        <p class="auth-subtitle">
+
+            ግትም ሲጥምን ይቀላቀሉ!
+
+        </p>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+
+                <label>ስም</label>
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="ስም ይምረጡ"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>ኢሜይል</label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="ኢሜይል ያስገቡ"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>የይለፍ ቃል</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="የይለፍ ቃል ያስገቡ"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>የይለፍ ቃል ያረጋግጡ</label>
+
+                <input
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="የይለፍ ቃልዎን ያረጋግጡ"
+                    required>
+
+            </div>
+
+            <button
+                class="auth-btn"
+                type="submit">
+
+                አካውንት ክፈት
+
+            </button>
+
+        </form>
+
+        <p class="auth-link">
+
+            አካውንት አለዎት?
+
+            <a href="login.html">
+
+                ይግቡ
+
+            </a>
+
+        </p>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <p>
+
+        © 2026 Getem Sitim.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<script src="js/storage.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="components/navbar.js"></script>
+
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

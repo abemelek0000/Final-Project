@@ -10,11 +10,13 @@ async function createPoem(req, res) {
       });
     }
 
+    const sourceType = req.user.role === "ADMIN" ? "ADMIN" : "USER";
+
     const poem = await poemModel.createPoem(
       req.user.id,
       title,
       content,
-      "USER"
+      sourceType
     );
 
     res.status(201).json({
@@ -31,10 +33,88 @@ async function createPoem(req, res) {
   }
 }
 
+async function adminPoems(req,res){
+
+    try{
+
+        const viewerId = req.user ? req.user.id : null;
+
+        const poems =
+            await poemModel.getAdminPoems(viewerId);
+
+        res.json(poems);
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        res.status(500).json({
+
+            message:"Internal Server Error"
+
+        });
+
+    }
+
+}
+
+
+async function userPoems(req,res){
+
+    try{
+
+        const viewerId = req.user ? req.user.id : null;
+
+        const poems =
+            await poemModel.getUserPoems(viewerId);
+
+        res.json(poems);
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        res.status(500).json({
+
+            message:"Internal Server Error"
+
+        });
+
+    }
+
+}
+
+
+async function myPoems(req, res) {
+
+    try {
+
+        const poems = await poemModel.getMyPoems(req.user.id);
+
+        res.json(poems);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+
+}
+
+
 async function getAllPoems(req, res) {
   try {
 
-    const poems = await poemModel.getAllPoems();
+    const viewerId = req.user ? req.user.id : null;
+
+    const poems = await poemModel.getAllPoems(viewerId);
 
     res.json(poems);
 
@@ -50,8 +130,6 @@ async function getAllPoems(req, res) {
 
 async function getPoem(req, res) {
   try {
-
-    await poemModel.incrementViews(req.params.id);
 
     const poem = await poemModel.getPoemById(req.params.id);
 
@@ -201,6 +279,40 @@ async function adminDeletePoem(req, res) {
 
 }
 
+async function viewPoem(req, res) {
+  try {
+
+    const views = await poemModel.incrementViews(req.params.id);
+
+    res.json({ views });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
+async function poemsByAuthor(req, res) {
+  try {
+
+    const viewerId = req.user ? req.user.id : null;
+
+    const poems = await poemModel.getPoemsByAuthor(req.params.id, viewerId);
+
+    res.json(poems);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
 module.exports = {
   createPoem,
   getAllPoems,
@@ -208,5 +320,10 @@ module.exports = {
   updatePoem,
   deletePoem,
   featuredPoem,
-  adminDeletePoem
+  adminDeletePoem,
+  adminPoems,
+  userPoems,
+  myPoems,
+  viewPoem,
+  poemsByAuthor
 };

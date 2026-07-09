@@ -7,9 +7,19 @@ const poemController = require("../controllers/poemController");
 
 router.post("/", authenticate, poemController.createPoem);
 
-router.get("/", poemController.getAllPoems);
+router.get("/", authenticate.optional, poemController.getAllPoems);
 
 router.get("/featured", poemController.featuredPoem);
+
+router.get("/mine", authenticate, poemController.myPoems);
+
+router.get("/admin", authenticate.optional, poemController.adminPoems);
+
+router.get("/user", authenticate.optional, poemController.userPoems);
+
+router.get("/by-author/:id", authenticate.optional, poemController.poemsByAuthor);
+
+router.post("/:id/view", poemController.viewPoem);
 
 router.get("/:id", poemController.getPoem);
 

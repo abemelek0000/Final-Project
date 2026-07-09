@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>ግጥም-ሲጥም</title>
 </head>
 <body>
@@ -11,12 +11,7 @@
      <div class="intro" id="home">
         <header>
             <h1>ግጥም ሲጥም</h1>
-            <nav class="pages">
-                <a href="home.html">ቤት-ለእንግዳ</a>
-                <a href="poems.html">መሶብ</a>
-                <a href="Contact.html">ጓዳ</a>
-                <a href="about.html">ስለ-እኛ</a>
-            </nav>
+           <nav id="navbar"></nav>
         </header>
         <div class="intro-content">
             <div class="left">
@@ -46,12 +41,15 @@
             </div>
         <div class="content">
             <div class="recommend-left">
-                  <img src="Image/rees-yelewm-eliyas-shitahun.webp" alt="weekly recommended book">
+                  <img
+                    id="bookCover"
+                    src="Image/rees-yelewm-eliyas-shitahun.webp"
+                    alt="weekly recommended book">
                   
             </div>
             <div class="recommend-right">
-                <h3>ቅምሻ</h3>
-                <pre class="recommend-text">
+                <h3 id="bookTitle">ቅምሻ</h3>
+                <pre class="recommend-text" id="bookDescription">
                                መናፈቅ ትርጉሙ...<br>
                    ተቃቅፎ ተቋልፎ ፣ ቀን ጊዜን ማሳለፍ፤ <br> 
                                የማፍቀር ትርጉሙ...<br>
@@ -59,8 +57,8 @@
                                        (መሰለኝ)
                 </pre>
                     <div class="author-info">
-                        <span class="author-name"><i>ኤልያስ ሽታሁን</i></span>
-                        <span class="book-name"><i>ርዕስ የለውም</i></span>
+                        <span class="author-name"> <i id="bookAuthor">ኤልያስ ሽታሁን</i> </span>
+                       <span class="book-name"> <i id="bookName">ርዕስ የለውም</i> </span>
                     </div>
            </div>
         </div>
@@ -71,7 +69,7 @@
             </div>
         <div class="content">
             <div class="winner-left">
-                <pre class="winner-text"> 
+                <pre class="winner-text" id="featuredPoem"> 
  ዓይኔን በዓይኔ አጠፋሁ ፣ ብሌኔን ከ’ኔ ለየው 
  ፅልመት ሞላው ዓለሜን  ብርሃናቸው ቢንጨባረር
  መስማትንም ተውኩኝ ፣ ድምፅን ከ’ኔ ለየው 
@@ -84,8 +82,8 @@
                 </pre>     
             </div>
             <div class="winner-right">
-                <img src="Image/832.jpg" alt="weekly winner poet">
-                <p class="winner-poet">አቤሜሌክ አስማማው</p>
+                <img id="featuredAuthorImage" src="Image/832.jpg" alt="weekly winner poet">
+                <p class="winner-poet" id="featuredAuthor"> አቤሜሌክ አስማማው</p>
            </div>
         </div>
     </section>  
@@ -97,8 +95,7 @@
                     <nav>
                         <a href="home.html">ቤት-ለእንግዳ</a>
                         <a href="poems.html">መሶብ</a>
-                        <a href="Contact.html">ጓዳ</a>
-                        <a href="about.html">ስለ-እኛ</a>
+                        
                     </nav>
                 </div>
                 <div class="links">
@@ -116,6 +113,11 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/storage.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui.js"></script>
+<script src="components/navbar.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
